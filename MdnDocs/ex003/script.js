@@ -50,4 +50,5 @@ function conferirPalpite() {
     contagemPalpites++;
     campoPalpite.value = '';
     campoPalpite.focus();
+    envioPalpite.addEventListener('click', conferirPalpite);
 }
