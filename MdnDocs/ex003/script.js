@@ -43,17 +43,18 @@ function conferirPalpite() {
         ultimoResultado.textContent = 'Errado!'
         ultimoResultado.style.backgroundColor = 'red';
         if(palpiteUsuario < numeroAleatorio) {
-            baixoOuAlto.textContent = 'Seu palpite está muito baixo!'
+            baixoOuAlto.textContent = 'Seu palpite está muito baixo!';
         } else if(palpiteUsuario > numeroAleatorio) {
-            baixoOuAlto.textContent = 'Seu número está muito alto!'
+            baixoOuAlto.textContent = 'Seu número está muito alto!';
         }
     }
 
     contagemPalpites++;
     campoPalpite.value = '';
     campoPalpite.focus();
-    envioPalpite.addEventListener('click', conferirPalpite);
 }
+
+envioPalpite.addEventListener('click', conferirPalpite);
 
 function configFimDeJogo() {
     campoPalpite.disabled = true;
