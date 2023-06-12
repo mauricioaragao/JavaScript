@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual a sua origem</title>
+    
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+            font-size: 24px;
+            color: white;
+        }
+        .resultado.true {
+            color: green;
+            font-weight: bold;
+        }
+
+        .resultado.false {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você é estrangeiro?</h1>
+    <label for="pais">Digite o nome do país:</label>
+    <input type="text" id="pais" placeholder="Nome do país">
+
+    <input type="button" value="Verificar" onclick="verificarPais()">
+
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        function verificarPais(){
+            var pais = document.getElementById('pais').value
+
+            var resultado = document.getElementById('resultado')
+            if (pais === '') {
+                resultado.innerHTML = 'Digite um país válido!'
+                resultado.classList.remove('true', 'false')
+            } else if (pais === 'Brasil') {
+                resultado.innerHTML = 'Você brasileiro!'
+                resultado.classList.add('true')
+            } else {
+                resultado.innerHTML = 'Você é estrangeiro!'
+                resultado.classList.add('false')
+            }
+        }
+    </script>
+</body>
+</html>
