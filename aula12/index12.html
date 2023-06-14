@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem de saudaçao do dia</title>
+</head>
+<body>
+    <h1>Diga bom dia, boa tarde ou boa noite</h1>
+    <label for="horario">Digite a hora desejada:</label>
+    <input type="number" id="horario" placeholder="Digite a hora">
+
+    <input type="button" value="Verificar" onclick="verificarHora()">
+
+    <div class="resultado" id="resultado"></div>  
+
+    <script>
+        function verificarHora() {
+            let horarioInput = document.getElementById('horario')
+            let horario = horarioInput.value
+
+            let resposta = document.getElementById('resultado')
+            
+            if (horario === '' || horario < 0 || horario > 24) {
+                resposta.innerHTML = 'Hora inválida'
+            } else if (horario < 12) {
+                resposta.innerHTML = 'Bom dia!'
+            } else if (horario <= 18) {
+                resposta.innerHTML = 'Boa tarde!'            
+            } else {
+                resposta.innerHTML = 'Boa noite!'
+            }
+        }
+    </script>
+</body>
+</html>
