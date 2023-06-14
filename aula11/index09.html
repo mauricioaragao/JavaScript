@@ -33,12 +33,13 @@
 
     <script>
         function verificarPais(){
-            var pais = document.getElementById('pais').value
+            var paisInput = document.getElementById('pais')
+            var pais = paisInput.value
 
             var resultado = document.getElementById('resultado')
             if (pais === '') {
                 resultado.innerHTML = 'Digite um país válido!'
-                resultado.classList.remove('true', 'false')
+                resultado.classList.add('vazio')
             } else if (pais === 'Brasil') {
                 resultado.innerHTML = 'Você brasileiro!'
                 resultado.classList.add('true')
@@ -46,6 +47,9 @@
                 resultado.innerHTML = 'Você é estrangeiro!'
                 resultado.classList.add('false')
             }
+
+            //Limpa a caixa de entrada após verificar
+            paisInput.value = ''
         }
     </script>
 </body>
