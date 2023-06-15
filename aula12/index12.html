@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensagem de saudaçao do dia</title>
+    <style>
+        body {
+            background-color: gray;
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Diga bom dia, boa tarde ou boa noite</h1>
+    <h1>Informe a hora e receba uma saudação</h1>
     <label for="horario">Digite a hora desejada:</label>
     <input type="number" id="horario" placeholder="Digite a hora">
 
@@ -30,6 +36,10 @@
             } else {
                 resposta.innerHTML = 'Boa noite!'
             }
+            resposta.style.color = 'green'
+            resposta.style.fontWeight = 'bold'
+
+            horarioInput.value = ''
         }
     </script>
 </body>
